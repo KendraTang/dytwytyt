@@ -17,11 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'h-screen flex flex-col border-black max-w-screen-md p-4 text-xl leading-8 md:text-base')}>
-        {children}
-        <footer>
-          {/* TODO: add credit to the book */}
-        </footer>
+      <body className={cn(inter.className, 'h-dvh overflow-hidden m-auto relative max-w-screen-md text-xl leading-8 md:text-base')}>
+        <div className="flex flex-col p-4 pb-10 h-full overflow-y-auto">
+          {children}
+        </div>
       </body>
     </html>
   );

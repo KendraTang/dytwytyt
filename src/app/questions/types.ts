@@ -9,3 +9,9 @@ export type Contradiction = {
   id: number;
   contradiction: Pair<{ questionId: number; answer: boolean }>;
 };
+
+export type ContradictionResult = {
+  id: number;
+  contradiction: Pair<{ questionId: number; answer: boolean }>;
+  nervous: boolean;
+};

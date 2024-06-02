@@ -1,3 +1,5 @@
+import { channel } from "diagnostics_channel";
+
 export const QUESTIONS = [
   "客觀的道德標準並不存在，道德判斷只是代表個別文化的價值觀。",
   "只要不傷害別人，每個人都應該有權自由追求自己的目標。",
@@ -34,6 +36,8 @@ export const QUESTIONS = [
   question,
 }));
 
+export const QUESTIONS_MAP = new Map(QUESTIONS.map(({ id, question }) => [id, question]))
+
 export const CONTRADICTIONS = [
   [{ questionId: 1, answer: true }, { questionId: 27, answer: true }],
   [{ questionId: 5, answer: true }, { questionId: 29, answer: false }],
@@ -54,3 +58,26 @@ export const CONTRADICTIONS = [
   id: index + 1,
   contradiction,
 }));
+
+export const WHERE_TO_BUY = [
+  {
+    channel: '博客來網路書店',
+    url: 'https://www.books.com.tw/products/0010817339',
+  },
+  {
+    channel: '誠品網路書店',
+    url: 'https://www.eslite.com/product/1001156502751041',
+  },
+  {
+    channel: 'Readmoo讀墨電子書',
+    url: 'https://readmoo.com/book/210106407000101'
+  },
+  {
+    channel: 'Rakuten kobo電子書',
+    url: 'https://www.kobo.com/tw/zh/ebook/C9usY_mzhTGcWj_oJ7eXPg'
+  },
+  {
+    channel: 'Google Play Books電子書',
+    url: 'https://play.google.com/store/books/details/?id=G7GRDwAAQBAJ'
+  }
+]

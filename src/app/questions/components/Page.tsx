@@ -27,7 +27,7 @@ const ClientPage: React.FC<Props> = () => {
       onAnswer={handleAnswer}
     />;
   }
-  return <Result answers={answers} />
+  return <Result answers={answers as Answer} />
 };
 
 export default ClientPage;
