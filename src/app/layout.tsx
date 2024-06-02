@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'h-screen flex border-black max-w-screen-md m-auto p-4 text-xl leading-8 md:text-base')}>
+      <body className={cn(inter.className, 'h-screen flex flex-col border-black max-w-screen-md p-4 text-xl leading-8 md:text-base')}>
         {children}
         <footer>
           {/* TODO: add credit to the book */}

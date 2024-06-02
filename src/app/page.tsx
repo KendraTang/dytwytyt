@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-5 p-6 place-self-center items-center border border-gray-400 outline outline-2 outline-offset-4 outline-gray-400">
+    <div className="flex flex-col gap-5 p-6 m-auto items-center border border-gray-400 outline outline-2 outline-offset-4 outline-gray-400">
       <h1 className="text-2xl text-center md:break-keep">《你以為你以為的就是你以為的嗎？：<wbr />12道檢測思考清晰度的哲學闖關遊戲》</h1>
       <h2>第一關：哲學健康檢查</h2>
       <article className="text-base my-5 pl-6 pr-3">
