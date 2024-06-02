@@ -96,7 +96,7 @@ const Result: React.FC<Props> = ({ answers }) => {
   const router = useRouter();
   const contradictionResults = getContradictionResults(answers);
   return (
-    <div>
+    <div className="pb-10">
       <Header
         onBack={() => router.back()}
         title="檢查結果"

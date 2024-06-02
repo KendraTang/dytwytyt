@@ -37,7 +37,7 @@ const Questions: React.FC<Props> = ({ answers, onSubmit, onAnswer }) => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="pt-4">
       <div className="absolute inset-0 bottom-auto bg-white shadow-[0_0_15px_10px_#fff]">
         <Progress
           className="rounded-none"
@@ -54,7 +54,7 @@ const Questions: React.FC<Props> = ({ answers, onSubmit, onAnswer }) => {
           }
         }}
       />
-      <ul className="flex flex-col pb-20">
+      <ul className="flex flex-col pb-10">
         {QUESTIONS.map((question) => (
           <li key={question.id} className="flex gap-3 py-5 border-b border-b-gray-200 items-center">
             <div className="flex">
@@ -76,7 +76,7 @@ const Questions: React.FC<Props> = ({ answers, onSubmit, onAnswer }) => {
           </li>
         ))}
       </ul>
-      <div className="py-5 absolute inset-0 bg-white top-auto px-4 border-t border-t-gray-400">
+      <div className="py-5 sticky w-full bottom-0 bg-white px-4 border-t border-t-gray-400">
         <Button
           className="w-full"
           size="lg"

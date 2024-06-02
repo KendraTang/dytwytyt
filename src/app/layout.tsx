@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, 'h-dvh overflow-hidden m-auto relative max-w-screen-md text-xl leading-8 md:text-base')}>
-        <div className="flex flex-col p-4 pb-10 h-full overflow-y-auto">
+        <div className="flex flex-col px-4 h-full overflow-y-auto">
           {children}
         </div>
       </body>
