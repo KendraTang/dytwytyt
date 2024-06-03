@@ -8,12 +8,14 @@ export enum StorageKey {
 
 export const useLocalStorage = <T>(key: StorageKey, initialValue: T): [T, Dispatch<SetStateAction<T>>] => {
   const [value, setValue] = useState<T>(() => {
-    const storedValue = localStorage.getItem(key);
+    if (typeof window === 'undefined') return initialValue;
+    const storedValue = window.localStorage.getItem(key);
     return storedValue ? JSON.parse(storedValue) : initialValue;
   });
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
+    if (typeof window === 'undefined') return;
+    window.localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
   return [value, setValue];
