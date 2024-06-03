@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import { Answer, ContradictionResult } from '../types';
-import Header from './Header';
+import { Answer, ContradictionResult } from '../../types';
+import Header from '@/components/Header';
 import { useRouter } from 'next/navigation';
-import { CONTRADICTIONS, QUESTIONS_MAP, WHERE_TO_BUY } from '../constants';
+import { CONTRADICTIONS, QUESTIONS_MAP, WHERE_TO_BUY } from '@/app/constants';
 import {
   Accordion,
   AccordionContent,
@@ -52,6 +52,7 @@ const Summary: React.FC<{ results: ContradictionResult[] }> = ({ results }) => {
       description: '若不是思想極度細膩，就是一大團矛盾的綜合體！'
     }
   })()
+
   return (
     <div className="flex flex-col gap-3 items-center my-8 m-5 py-5 px-6 text-center
    border border-gray-400 outline outline-2 outline-offset-4 outline-gray-400 ">

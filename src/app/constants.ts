@@ -1,4 +1,3 @@
-import { channel } from "diagnostics_channel";
 
 export const QUESTIONS = [
   "客觀的道德標準並不存在，道德判斷只是代表個別文化的價值觀。",

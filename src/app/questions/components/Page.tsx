@@ -1,14 +1,16 @@
 'use client';
+
+import { StorageKey, useLocalStorage } from '@/utils/useLocalStorage';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { Answer } from '../../types';
 import Questions from './Questions';
-import { Answer } from '../types';
-import Result from './Result';
 
 export type Props = {
 }
 const ClientPage: React.FC<Props> = () => {
-  const [step, setStep] = React.useState(0);
-  const [answers, setAnswers] = React.useState<Partial<Answer>>({});
+  const [answers, setAnswers] = useLocalStorage<Partial<Answer>>(StorageKey.ANSWERS, {});
+  const router = useRouter()
 
   const handleAnswer = (questionId: number, answer: boolean) => {
     setAnswers((prev) => {
@@ -17,17 +19,12 @@ const ClientPage: React.FC<Props> = () => {
     });
   };
 
-  const handleNext = () => {
-    setStep((prev) => prev + 1);
-  }
 
-  if (step === 0) {
-    return <Questions onSubmit={handleNext}
-      answers={answers}
-      onAnswer={handleAnswer}
-    />;
-  }
-  return <Result answers={answers as Answer} />
+  return <Questions onSubmit={() => router.push('/result')}
+    answers={answers}
+    onAnswer={handleAnswer}
+    reset={() => setAnswers({})}
+  />;
 };
 
 export default ClientPage;

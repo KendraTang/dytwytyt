@@ -6,9 +6,11 @@ export type Props = {
   title: string;
   onTitleClick?: () => void;
   onBack?: () => void;
+  right?: React.ReactNode;
 }
 const Header: React.FC<Props> = ({
   title,
+  right,
   onTitleClick,
   onBack,
 }) => {
@@ -27,7 +29,7 @@ const Header: React.FC<Props> = ({
       <span onClick={onTitleClick}>
         {title}
       </span>
-      <span />
+      {right ?? <span />}
     </header>
   )
 };

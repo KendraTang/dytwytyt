@@ -3,12 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { Progress } from "@/components/ui/progress";
 import { cn } from '@/lib/utils';
-import { CircleIcon, Cross1Icon } from '@radix-ui/react-icons';
+import { CircleIcon, Cross1Icon, ReloadIcon } from '@radix-ui/react-icons';
 import { cva } from 'class-variance-authority';
 import React from 'react';
-import { QUESTIONS } from '../constants';
-import { Answer } from '../types';
-import Header from './Header';
+import { QUESTIONS } from '../../constants';
+import { Answer } from '../../types';
+import Header from '../../../components/Header';
 import { useRouter } from 'next/navigation';
 
 const buttonVariants = cva(
@@ -29,10 +29,11 @@ const buttonVariants = cva(
 
 export type Props = {
   answers: Partial<Answer>;
+  reset: () => void;
   onAnswer: (questionId: number, answer: boolean) => void;
   onSubmit: () => void;
 }
-const Questions: React.FC<Props> = ({ answers, onSubmit, onAnswer }) => {
+const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
   const answerCount = Object.values(answers).filter(x => x !== undefined).length;
   const router = useRouter();
 
@@ -53,6 +54,15 @@ const Questions: React.FC<Props> = ({ answers, onSubmit, onAnswer }) => {
               .forEach((answer, i) => onAnswer(i + 1, answer));
           }
         }}
+        right={
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={reset}
+          >
+            <ReloadIcon />
+          </Button>
+        }
       />
       <ul className="flex flex-col pb-10">
         {QUESTIONS.map((question) => (
