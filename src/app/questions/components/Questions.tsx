@@ -55,6 +55,7 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
           }
         }}
         right={
+          answerCount > 0 &&
           <Button
             variant="ghost"
             size="icon"
