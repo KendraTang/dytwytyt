@@ -68,15 +68,15 @@ export const WHERE_TO_BUY = [
     url: 'https://www.eslite.com/product/1001156502751041',
   },
   {
-    channel: 'Readmoo讀墨電子書',
+    channel: 'Readmoo 讀墨電子書',
     url: 'https://readmoo.com/book/210106407000101'
   },
   {
-    channel: 'Rakuten kobo電子書',
+    channel: '樂天 Kobo 電子書',
     url: 'https://www.kobo.com/tw/zh/ebook/C9usY_mzhTGcWj_oJ7eXPg'
   },
   {
-    channel: 'Google Play Books電子書',
+    channel: 'Google Play Books 電子書',
     url: 'https://play.google.com/store/books/details/?id=G7GRDwAAQBAJ'
   }
 ]

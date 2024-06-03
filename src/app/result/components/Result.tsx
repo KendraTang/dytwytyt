@@ -149,7 +149,7 @@ const Result: React.FC<Props> = ({ answers }) => {
         <p>
           詳細說明請見書中 P.20 分析。
         </p>
-        <div>
+        <div className="flex flex-col gap-2">
           購書/試閱可參考：
           <ul className="list-disc ml-10">
             {WHERE_TO_BUY.map(({ channel, url }) => (
