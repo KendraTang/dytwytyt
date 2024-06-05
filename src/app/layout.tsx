@@ -21,10 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'h-dvh overflow-hidden m-auto relative max-w-screen-md text-xl leading-8 md:text-base')}>
-        <div className="flex flex-col px-4 h-full overflow-y-auto">
+      <body className={cn(inter.className, 'w-full h-dvh flex flex-col overflow-y-auto text-xl leading-8 md:text-base')}>
+        <div className="px-4 flex-1 m-auto max-w-screen-md">
           {children}
         </div>
+        <footer className="text-center text-[0.7rem] leading-[0.8rem] text-gray-500 p-4 break-keep">
+          <p>本頁內容皆為出版書：Julian Baggini, Jeremy Stangroom<wbr />《你以為你以為的就是你以為的嗎？：12道檢測思考清晰度的哲學闖關遊戲》<wbr />（Do You Think What You Think You Think?: The Ultimate Philosophical Quiz Book）所有</p>
+        </footer>
       </body>
       {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-KCD245W2L9" />}
     </html>

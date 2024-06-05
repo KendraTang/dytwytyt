@@ -87,9 +87,9 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
           </li>
         ))}
       </ul>
-      <div className="py-5 -mx-4 sticky inset-0 top-auto bg-white px-4 border-t border-t-gray-400">
+      <div className="py-5 flex justify-center fixed inset-0 top-auto bg-white px-4 border-t border-t-gray-400">
         <Button
-          className="w-full"
+          className="w-full max-w-screen-md"
           size="lg"
           onClick={() => onSubmit()}
           disabled={answerCount !== QUESTIONS.length}>
