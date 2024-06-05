@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import SkipButton from "./components/SkipButton";
 
 export default function Home() {
   return (
@@ -15,11 +16,14 @@ export default function Home() {
             <li>題目中的用字都經過精心挑選，因此，作答過程中請仔細看清楚每一項陳述的意思。</li>
           </ul>
         </article>
-        <Button variant={"outline"} asChild className="hover:bg-black hover:text-white">
-          <Link href="/questions">
-            開始
-          </Link>
-        </Button>
+        <div className="flex gap-4">
+          <Button variant={"outline"} asChild>
+            <Link href="/questions">
+              開始
+            </Link>
+          </Button>
+          <SkipButton />
+        </div>
       </div>
     </div>
   );
