@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 import React from 'react';
 import { Answer } from '../../types';
 import Result from './Result';
+import dynamic from 'next/dynamic';
 
 export type Props = {
 }
@@ -19,4 +20,4 @@ const ClientPage: React.FC<Props> = () => {
   return <Result answers={answers as Answer} />
 };
 
-export default ClientPage;
+export default dynamic(() => Promise.resolve(ClientPage), { ssr: false });

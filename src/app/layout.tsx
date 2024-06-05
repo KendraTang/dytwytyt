@@ -7,7 +7,10 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "哲學健康檢查 | 你以為你以為的就是你以為的嗎？",
+  title: {
+    template: "%s | 哲學健康檢查 | 你以為你以為的就是你以為的嗎？",
+    default: "哲學健康檢查 | 你以為你以為的就是你以為的嗎？",
+  },
   description: "本份題目摘自《你以為你以為的就是你以為的嗎？：12道檢測思考清晰度的哲學闖關遊戲》一書，詳細說明請見書中分析。",
 };
 

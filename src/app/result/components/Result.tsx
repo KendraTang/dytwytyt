@@ -1,15 +1,16 @@
 'use client';
-import React, { Fragment } from 'react';
-import { Answer, ContradictionResult } from '../../types';
-import Header from '@/components/Header';
-import { useRouter } from 'next/navigation';
+
 import { CONTRADICTIONS, QUESTIONS_MAP, WHERE_TO_BUY } from '@/app/constants';
+import Header from '@/components/Header';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { useRouter } from 'next/navigation';
+import React, { Fragment } from 'react';
+import { Answer, ContradictionResult } from '../../types';
 
 const getContradictionResults = (answers: Answer): ContradictionResult[] => {
   const result = CONTRADICTIONS.map((contradiction) => {
