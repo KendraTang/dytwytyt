@@ -38,13 +38,7 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
   const router = useRouter();
 
   return (
-    <div className="pt-4">
-      <div className="absolute inset-0 bottom-auto bg-white shadow-[0_0_15px_10px_#fff]">
-        <Progress
-          className="rounded-none"
-          color="#ec4899"
-          value={answerCount * 100 / QUESTIONS.length} />
-      </div>
+    <>
       <Header
         title="哲學健康檢查"
         onBack={() => router.back()}
@@ -65,6 +59,12 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
           </Button>
         }
       />
+      <div className="sticky -mx-4 inset-0 bottom-auto bg-white shadow-[0_0_15px_10px_#fff]">
+        <Progress
+          className="rounded-none"
+          color="#ec4899"
+          value={answerCount * 100 / QUESTIONS.length} />
+      </div>
       <ul className="flex flex-col pb-10">
         {QUESTIONS.map((question) => (
           <li key={question.id} className="flex gap-3 py-5 border-b border-b-gray-200 items-center">
@@ -87,7 +87,7 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
           </li>
         ))}
       </ul>
-      <div className="py-5 sticky w-full bottom-0 bg-white px-4 border-t border-t-gray-400">
+      <div className="py-5 -mx-4 sticky inset-0 top-auto bg-white px-4 border-t border-t-gray-400">
         <Button
           className="w-full"
           size="lg"
@@ -96,7 +96,7 @@ const Questions: React.FC<Props> = ({ answers, reset, onSubmit, onAnswer }) => {
           {answerCount === QUESTIONS.length ? '看結果' : `已回答 ${answerCount} / ${QUESTIONS.length} 題`}
         </Button>
       </div>
-    </div>
+    </>
   )
 };
 

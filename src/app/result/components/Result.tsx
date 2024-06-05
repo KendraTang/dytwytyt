@@ -58,14 +58,20 @@ const Summary: React.FC<{ results: ContradictionResult[] }> = ({ results }) => {
         <span className="text-2xl">{title}</span>
         {description}
       </div>
-      <div className="text-xs text-muted-foreground">* 各種分數所代表的意義：{Object.values(NERVOUS_THRESHOLDS).map(({ title, description }) => `${title}：${description.slice(0, -1)}`).join('；')}。</div>
+      <div className="text-xs text-muted-foreground">各種分數所代表的意義：
+        <ul className="list-disc pl-8">
+          {Object.values(NERVOUS_THRESHOLDS).map(({ title, description }) => (
+            <li key={title}>{title}：{description}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
 
 const ContradictionList: React.FC<{ items: ContradictionResult[] }> = ({ items }) => {
   return (
-    <ul className="grid grid-cols-[28px_1fr] gap-4 text-sm">
+    <ul className="grid grid-cols-[28px_1fr] gap-4 text-base">
       {items.map(({ id, contradiction }, i) => {
         return (
           <Fragment key={id}>
@@ -116,7 +122,7 @@ const Details: React.FC<{ result: ContradictionResult[] }> = ({ result }) => {
     <Accordion type="multiple" className="px-4" defaultValue={foldItems.map(x => x.key)}>
       {foldItems.map(({ title, key, items }) => (
         <AccordionItem value={key} key={key}>
-          <AccordionTrigger>
+          <AccordionTrigger className="text-base">
             {foldItems.length === 1 ? '緊張關係組合' : title}
           </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-3">
