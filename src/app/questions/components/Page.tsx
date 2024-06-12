@@ -23,7 +23,7 @@ const ClientPage: React.FC<Props> = () => {
 
   const handleSubmit = () => {
     if (edited) {
-      window.gtag?.('event', 'submit_answers', answers);
+      window.gtag?.('event', 'submit_answers', Object.fromEntries(Object.entries(answers).map(([questionId, answer]) => [`q${questionId}`, answer])));
     }
     router.push('/result');
   }
