@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="uGvkPpDqOa1JG9TCt9UKse_33FJ9sBhkwJka9-xytg4" />
+      </head>
       <body className={cn(inter.className, 'w-full h-dvh flex flex-col overflow-y-auto text-xl leading-8 md:text-base')}>
         <div className="px-4 flex-1 m-auto max-w-screen-md">
           {children}
